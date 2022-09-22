@@ -131,7 +131,7 @@ body {
   color: #ede6e3;
 }
 
-.navbar-brand:hover {
+.navbar-brand-text:hover {
   text-decoration: none;
   color: #aad922 !important;
 }
@@ -148,4 +148,34 @@ body {
   color: #1a1b22;
   border-radius: 0px !important;
   outline: 1px solid #aad922;
+}
+
+/* News Cards */
+.card {
+  border-radius: 40px 2px 40px 2px;
+}
+
+.card-body {
+  padding: 8px 16px;
+  border-radius: 40px 2px;
+  background-color: #262730;
+  border: 2px solid #ede6e3;
+}
+
+.data-title {
+  color: #262730;
+}
+
+.data-by, .data-url {
+  color: #ede6e3;
+}
+
+.post-url {
+  text-decoration: none;
+  color: #aad922;
+}
+
+.post-url:hover {
+  text-decoration: none;
+  color: #ede6e3;
 }
