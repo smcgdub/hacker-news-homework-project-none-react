@@ -1,4 +1,4 @@
-![Homepage displayed on multiple devices]()
+![Homepage displayed on multiple devices](./assets/images/am-i-responsive.png)
 
 # **Hacker News Homework Project?**
 
