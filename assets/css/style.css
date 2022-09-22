@@ -124,3 +124,28 @@ body {
     opacity: 1;
   }
 }
+
+/* Navbar */
+.navbar-brand {
+  text-decoration: none;
+  color: #ede6e3;
+}
+
+.navbar-brand:hover {
+  text-decoration: none;
+  color: #aad922 !important;
+}
+
+/* Header */
+.btn {
+  padding: 6px;
+  background-color: #aad922;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #ede6e3;
+  color: #1a1b22;
+  border-radius: 0px !important;
+  outline: 1px solid #aad922;
+}
