@@ -61,3 +61,8 @@ function getTopPosts() {
       })
     })
 }
+
+function clearNews() {
+  window.location.reload();
+  // document.getElementById('output').innerHTML = ``;
+}
