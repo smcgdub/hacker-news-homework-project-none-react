@@ -23,11 +23,11 @@ function getNewPosts() {
               <p class="off-white-text mb-0">link to article:<a class="post-url" href="${story.url}" target="_blank"> Click here</a></p>
               </div>
           </div>
-          `
+          `;
           })
-        )
-      })
-    })
+        );
+      });
+    });
 }
 
 // Get top posts function
@@ -55,11 +55,11 @@ function getTopPosts() {
               <p class="mb-0 off-white-text">Link to article:<a class="post-url" href="${story.url}" target="_blank"> Click here</a></p>
               </div>
           </div>
-          `
+          `;
           })
-        )
-      })
-    })
+        );
+      });
+    });
 }
 
 function clearNews() {
