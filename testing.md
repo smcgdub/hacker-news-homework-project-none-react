@@ -29,14 +29,10 @@
 * All of the HTML files were tested on the [W3C HTML Markup Validation website](https://validator.w3.org/)
 * The HTML test came back showing document checking completed, no errors or warnings to show
 
-![HTML Testing Results]()
-
 **1.2 CSS Code Validating**
 
 * The main CSS files were tested on the [W3C CSS  Validation website](https://jigsaw.w3.org/css-validator/) 
 * The CSS test came back showing no errors in the CSS code
-
-![CSS Testing Results]()
 
 **1.3 JavaScript Code Validating**
 
