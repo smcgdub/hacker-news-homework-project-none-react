@@ -18,6 +18,7 @@ This is a homework project i was given. The project was to build a React applica
 
 ### **2. Features**
   * 2.1 Navbar
+  * 2.2 Action Buttons
 
 ### **3. Technologies/Languages Used**
   * 3.1 VSCode
