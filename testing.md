@@ -72,19 +72,14 @@ All mobile testing was carried out on Chrome, FireFox, Brave, Opera & Edge brows
 
   I have narrowed this down to this section of code: 
 
-      document.getElementById('output').innerHTML += `
-        <div class="card mb-3">
-          <h5 id="post-title" class="card-header data-title mb-1">${story.title}</h5>
-          <div class="card-body">
-            <p class="off-white-text mb-0">${story.type} by: ${story.by}</p>
-            <p class="off-white-text mb-0">posted: ${humanDateFormat}</p>
-            <p class="off-white-text mb-0">link to article:<a class="post-url" href="${story.url}" target="_blank"> Click here</a></p>
-            </div>
-        </div>
-        `;
+  `document.getElementById('output').innerHTML = ``;`
 
-  The problem is that the api is loading the stories in order but some stories are being created and loaded ahead of other ones.
+  This line of code is the first line of code in both functions `function getTopPosts()` and `function getLatestPosts()`. This functionality of this line of code is to clear out the inner HTML of the `output` div where each news card is generated before rendering the new latest and top news stories.
+    
+  Without this line of code if the user presses the `Read Latest News` button and then clicks the `Read Top News` button then the news feed generated first (`Read Latest News`) will not clear out and the feed will stay the same. This will also happen in reverse order if the user clicks the `Read Top News` button first and then clicks the `Read Latest News` button.
+
+  I have tested commenting out these lines of code and running a `console.log(getNewPosts)` & `console.log(getTopPosts)`to view what is generated in the console and when this is done the feed is generated in the same order every single time you call the function. So i have found the source of the issue. 
 
   **SOLUTION**
 
-  I would assume that if there was a delay between the inner HTML elements being created that this would give the browser enough time to create and load a story before the next story in the api feed is created and loaded onto the page.
+  I have narrowed the issue down to these 2 lines of code (line 3 & line 35 in the app.js file) but at time of submission of this project i haven't resolved the issue as of yet. 
