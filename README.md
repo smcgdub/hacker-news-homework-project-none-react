@@ -33,7 +33,7 @@ This is a homework project i was given. The project was to build a React applica
 ### **4. Testing**
   * 4.1 See [testing.md](testing.md) document 
 
-### **5. Deployment**
+### **5. Deployment & Cloning**
 
   * 5.1 Deployment 
   * 5.2 Cloning 
@@ -84,10 +84,6 @@ I decided i would use the Google fonts [Open Sans](https://fonts.google.com/spec
 
 ![Image of how the font will look](./assets/images/open-sans-font.png)
 
-#### **ICONS**
-
-Any icons that were used were taken from the Font Awesome website.  
-
 #### **COLORS**
 
 The color palette for the project can be found below.<br>
@@ -126,7 +122,7 @@ The navbar is a simple Bootstrap navbar that is responsive and will change depen
 
 ![Image of action buttons](./assets/images/action-buttons.png)
 
-There are 3x action buttons for the user to interact with. 
+There are 3x action buttons for the user to interact with. Each action button has a vanilla JavaScript function that will trigger when the user performs an `onclick="functionName()"` action.
 
 1. Read Latest News 
 When the user clicks on this button it will call the function `getNewPosts()` This will activate the api feed and generate all of the latest news stories for the user to scroll through and interact with

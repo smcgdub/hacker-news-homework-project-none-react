@@ -46,7 +46,9 @@ I also tested the site in the console and there were no error or warning message
 
 **2.1 Manual testing desktop**
 
-All desktop testing was carried out on Chrome, FireFox, Safari, Brave, Opera & Edge browsers. To save repetition in the testing.md file when an feature is tested and listed as functioning correctly then readers of this file can know that testing was passed on all browsers. 
+To save repetition in the testing.md file when an feature is tested and listed as functioning correctly then readers of this file can know that testing was passed on all browsers. 
+
+All desktop testing was carried out on Chrome, FireFox, Safari, Brave, Opera & Edge browsers. 
 
 <hr>
 
@@ -63,8 +65,88 @@ All mobile testing was carried out on Chrome, FireFox, Brave, Opera & Edge brows
 <hr>
 
 ### **3. Testing Issues Found** ###
+<br/>
 
-1. Order of items loaded<br/>
+1. **Console issues being generated**
+
+  When doing the manual testing on the Brave and Edge browsers on my mac i was getting console errors appearing when the page loads and when the action buttons were pressed. These issues were not showing on the other browsers. I have changed the original JavaScript functions from:
+
+```
+<!-- Get new posts function -->
+function getNewPosts() {
+  document.getElementById('output').innerHTML = ``;
+  fetch('https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty')
+    .then(response => response.json())
+    .then(storyIds => {
+      storyIds.map(function (id) {
+        return (
+          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
+          .then(response => response.json())
+          .then(story => {
+            // Display time human readable
+            let unixTimestamp = story.time;
+            let milliseconds = unixTimestamp * 1000;
+            let dateObject = new Date(milliseconds);
+            let humanDateFormat = dateObject.toLocaleString();
+            document.getElementById('output').innerHTML += `
+          <div class="card mb-3">
+            <h5 id="post-title" class="card-header data-title mb-1">${story.title}</h5>
+            <div class="card-body">
+              <p class="off-white-text mb-0">${story.type} by: ${story.by}</p>
+              <p class="off-white-text mb-0">posted: ${humanDateFormat}</p>
+              <p class="off-white-text mb-0">link to article:<a class="post-url" href="${story.url}" target="_blank"> Click here</a></p>
+              </div>
+          </div>
+          `;
+          })
+        );
+      });
+    });
+}
+```
+
+To: 
+
+```
+// Fetch New Stories 
+const fetchNewStoriesIds = async () => {
+  document.getElementById('output').innerHTML = ``;
+  const response = await fetch(`${hn_host}/${hn_newStories}`)
+  const topStoriesIds = await response.json()
+    .then(storyIds => {
+      storyIds.map(function (story) {
+        return (
+          fetch(`https://hacker-news.firebaseio.com/v0/item/${story}.json?print=pretty`)
+          .then(response => response.json())
+          .then(story => {
+            // Display time human readable
+            let unixTimestamp = story.time;
+            let milliseconds = unixTimestamp * 1000;
+            let dateObject = new Date(milliseconds);
+            let humanDateFormat = dateObject.toLocaleString();
+            // Generate each news story card
+            document.getElementById('output').innerHTML += `
+            <div>
+              <div class="card mb-3">
+                <h5 id="post-title" class="card-header data-title mb-1">${story.title}</h5>
+                  <div class="card-body">
+                    <p class="mb-0 off-white-text">${story.type} by: ${story.by}</p>
+                    <p class="mb-0 off-white-text">Posted: ${humanDateFormat}</p>
+                    <p class="mb-0 off-white-text">Link to article:<a class="post-url" href="${story.url}" target="_blank"> Click here</a></p>
+                  </div>
+              </div>
+            </div>
+            `
+          })
+        )
+      })
+    })
+}
+```
+
+This change in the code by adding the async and await has fixed the errors that were being generated in the console for all browsers except the Brave browser issues. The functionality of the site in Brave is unaffected and the site performs as is intended. But this is to highlight i am aware of the issues. 
+
+2. **Order of items loaded**<br/>
   
   When the user clicks on the read latest news button or the read top news button the api will load all of the stories in that category as is intended. However you will notice if you switch between latest and top news stories you will see that the order changes and doesn't stay the same. 
 
@@ -82,4 +164,4 @@ All mobile testing was carried out on Chrome, FireFox, Brave, Opera & Edge brows
 
   **SOLUTION**
 
-  I have narrowed the issue down to these 2 lines of code (line 3 & line 35 in the app.js file) but at time of submission of this project i haven't resolved the issue as of yet. 
+  I have narrowed the issue down to these 2 lines of code (line 8 & line 42 in the app.js file) but at time of submission of this project i haven't resolved the issue as of yet. 
