@@ -169,3 +169,7 @@ This change in the code by adding the async and await has fixed the errors that 
 3. **Mobile Loading Speeds**<br/>
 
   The application naturally is loading slower on my mobile device than on my desktop computer. This is due to the api calling all the stories and also due to the less processing power on a mobile device over a desktop computer. Also some browsers are faster than others when loading the site and the type of device used for testing will have an effect due to the processing power and memory of each device varying.
+
+3. **Webmanifest Error**<br/>
+
+  On my last round of testing before submitting the project in the console on the deployed site it is starting to display an error in the console. This error is to do with the webmanifest. As i am about to submit the project i want to make the assessor aware i am aware of this error that is being displayed. 
