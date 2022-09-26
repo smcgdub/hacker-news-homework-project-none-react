@@ -46,7 +46,7 @@ I also tested the site in the console and there were no error or warning message
 
 **2.1 Manual testing desktop**
 
-To save repetition in the testing.md file when an feature is tested and listed as functioning correctly then readers of this file can know that testing was passed on all browsers. 
+To save repetition in the testing.md file when an feature is tested and listed as functioning correctly then readers of this file can know that testing was passed on all browsers and on desktop and mobile devices. 
 
 All desktop testing was carried out on Chrome, FireFox, Safari, Brave, Opera & Edge browsers. 
 
@@ -165,3 +165,7 @@ This change in the code by adding the async and await has fixed the errors that 
   **SOLUTION**
 
   I have narrowed the issue down to these 2 lines of code (line 8 & line 42 in the app.js file) but at time of submission of this project i haven't resolved the issue as of yet. 
+
+3. **Mobile Loading Speeds**<br/>
+
+  The application naturally is loading slower on my mobile device than on my desktop computer. This is due to the api calling all the stories and also due to the less processing power on a mobile device over a desktop computer. Also some browsers are faster than others when loading the site.
