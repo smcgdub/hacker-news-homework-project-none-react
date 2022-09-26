@@ -12,9 +12,8 @@ This is a homework project i was given. The project was to build a React applica
   * 1.1 Target audience
   * 1.2 Visitor goals
   * 1.3 Business goals
-  * 1.4 User stories
-  * 1.5 Design choices
-  * 1.6 Wire frames
+  * 1.4 Design choices
+  * 1.5 Wire frames
 
 ### **2. Features**
   * 2.1 Navbar
@@ -69,12 +68,7 @@ I want to be able to come to the site and easily read the latest news.
 
 No business or monetary goals, this was a homework project i was given to complete. 
 
-#### **1.4 User Stories**
-
-As a visitor to the company website i expect/want/need
- 
-
-#### **1.5 Design choices** 
+#### **1.4 Design choices** 
 
 A very simple SPA (Single Page Application) powered by the Hacker News API. Design choices are as follows: 
 
@@ -90,7 +84,7 @@ The color palette for the project can be found below.<br>
 
 ![Image of the color pallet used for the project](./assets/images/colour-scheme.png)
 
-#### **1.6 Wire Frames** 
+#### **1.5 Wire Frames** 
 
 The wireframes for the project can be seen below. There is a wireframe for desktop, tablet and mobile.
 
